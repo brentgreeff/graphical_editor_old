@@ -45,7 +45,7 @@ describe Image do
         context "adding a point at the same location as an existing point" do
           before { image.plot(1, 1, 'B') }
           
-          it "should return CF for the first row" do
+          it "should return BF for the first row" do
             image.row(1).should == "BF"
           end
         end
