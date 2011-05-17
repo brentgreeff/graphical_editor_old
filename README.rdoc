@@ -1,0 +1,9 @@
+= Graphical Editor
+
+== Install
+
+      bundle install
+
+== Specs
+
+bundle exec rspec --colour spec/
