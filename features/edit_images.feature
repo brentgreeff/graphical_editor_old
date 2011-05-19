@@ -3,21 +3,14 @@ Feature: Edit images
   As an image designer
   I want to edit my image and display it
   
-  Scenario: Exit the program
-    When I run `editor.rb` interactively
+  Scenario: Draw a 2 x 3 
+    When I run `ruby run_editor.rb` interactively
+    And I type "I 2 3"
+    And I type "S"
     And I type "X"
     Then the output should contain:
       """
-      something
+      00
+      00
+      00
       """
-  
-  @wip
-  Scenario: draw a blank image 4x3 pixels
-    When I run `editor.rb`
-    Then the output should contain:
-      """
-      0000
-      0000
-      0000
-      """
-
