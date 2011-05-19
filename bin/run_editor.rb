@@ -1,5 +1,10 @@
 
-while response = gets.chomp
+def prompt(*args)
+  print(*args)
+  gets.chomp
+end
+
+while response = prompt("> ")
   break if response == "X"
   
   input = response.split(' ')
@@ -15,3 +20,4 @@ while response = gets.chomp
     @y.times { puts "0" * @x }
   end
 end
+
