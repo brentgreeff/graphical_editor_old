@@ -43,7 +43,7 @@ class Image
     if existing
       existing.colour
     else
-      "F"
+      "0"
     end
   end
 end
