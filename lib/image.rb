@@ -6,7 +6,7 @@ class Image
   attr_writer :height
   
   def initialize
-    @points = []
+    clear
   end
   
   def row(row_num)
@@ -26,6 +26,10 @@ class Image
     else
       @points << Point.new(x, y, colour)
     end
+  end
+  
+  def clear
+    @points = []
   end
   
   private

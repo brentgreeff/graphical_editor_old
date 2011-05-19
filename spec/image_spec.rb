@@ -15,7 +15,7 @@ describe Image do
         image.row(1).should == "00"
       end
       
-      it "should have a second row of 0" do
+      it "should have a second row of 00" do
         image.row(2).should == "00"
       end
     end
@@ -47,6 +47,18 @@ describe Image do
           
           it "should return B0 for the first row" do
             image.row(1).should == "B0"
+          end
+        end
+        
+        context "clearing the image" do
+          before { image.clear }
+          
+          it "should have a first row of 00" do
+            image.row(1).should == "00"
+          end
+
+          it "should have a second row of 00" do
+            image.row(2).should == "00"
           end
         end
       end
