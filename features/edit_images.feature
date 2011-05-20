@@ -35,15 +35,32 @@ Feature: Edit images
       0
       """
   
-  Scenario: plot a coloured pixel
+  Scenario: plot a coloured pixel as detailed in the test
+    When I run `ruby run_editor.rb` interactively
+    And I type "I 5 6"
+    And I type "L 2 3 A"
+    And I type "S"
+    And I type "X"
+    Then the output should contain:
+      """
+      OOOOO
+      OOOOO
+      OAOOO
+      OOOOO
+      OOOOO
+      OOOOO
+      """
+  
+  Scenario: plot two coloured pixels
     When I run `ruby run_editor.rb` interactively
     And I type "I 2 2"
     And I type "L 1 1 F"
+    And I type "L 2 2 C"
     And I type "S"
     And I type "X"
     Then the output should contain:
       """
       F0
-      00
+      0C
       """
 
