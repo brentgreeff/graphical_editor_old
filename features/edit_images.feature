@@ -79,6 +79,28 @@ Feature: Edit images
       OOO
       OOO
       """
-
+  
+  Scenario: Display an error if the command is invalid
+    When I run `ruby run_editor.rb` interactively
+    And I type "Z"
+    And I type "X"
+    Then the output should contain:
+      """
+      Z - Unknown command
+      """
+  
+  Scenario: Draw a vertical column of colour
+    When I run `ruby run_editor.rb` interactively
+    And I type "I 4 4"
+    And I type "V 3 2 4 E"
+    And I type "S"
+    And I type "X"
+    Then the output should contain:
+      """
+      OOOO
+      OOEO
+      OOEO
+      OOEO
+      """
 
 

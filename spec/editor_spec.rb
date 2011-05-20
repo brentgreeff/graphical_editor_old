@@ -36,5 +36,11 @@ describe Editor do
       
       editor.s
     end
+    
+    it "should draw a vertical line if v is called" do
+      editor.image.should_receive(:vertical).with(3, 2, 4, 'E')
+      
+      editor.v(3, 2, 4, 'E')
+    end
   end
 end

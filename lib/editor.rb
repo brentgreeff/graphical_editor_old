@@ -15,6 +15,11 @@ class Editor
     nil
   end
   
+  def v(x, y1, y2, colour)
+    @image.vertical(x.to_i, y1.to_i, y2.to_i, colour)
+    nil
+  end
+  
   def c
     @image.clear
     nil
@@ -22,5 +27,9 @@ class Editor
   
   def s
     @image.show
+  end
+  
+  def method_missing(name, *args, &block)
+    "#{name.to_s.upcase} - Unknown command"
   end
 end

@@ -26,6 +26,10 @@ class Image
     end
   end
   
+  def vertical(x, y1, y2, colour)
+    (y1..y2).each { |y| plot(x, y, colour) }
+  end
+  
   def show
     result = ''
     

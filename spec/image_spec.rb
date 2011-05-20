@@ -108,4 +108,22 @@ describe Image do
       end
     end
   end
+  
+  # Vertical line
+  
+  context "with a width of 4 pixels" do
+    before { image.width = 4 }
+    
+    context "and a height of 4 pixels" do
+      before { image.height = 4 }
+      
+      context "with a 'E' coloured pixels placed vertically between x, y1 and y2" do
+        before { image.vertical(3, 2, 4, 'E') }
+        
+        it "should print as a 5x6 grid" do
+          image.show.should == "OOOO\nOOEO\nOOEO\nOOEO"
+        end
+      end
+    end
+  end
 end
