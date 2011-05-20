@@ -24,5 +24,7 @@ while response = prompt("> ")
     image.plot(input[1].to_i, input[2].to_i, input[3])
   end
   
+  image.clear if command.eql? 'C'
+  
   puts image.show if command.eql? 'S'
 end

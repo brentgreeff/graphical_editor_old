@@ -35,7 +35,7 @@ Feature: Edit images
       O
       """
   
-  Scenario: plot a coloured pixel as detailed in the test
+  Scenario: Plot a coloured pixel as detailed in the test
     When I run `ruby run_editor.rb` interactively
     And I type "I 5 6"
     And I type "L 2 3 A"
@@ -51,7 +51,7 @@ Feature: Edit images
       OOOOO
       """
   
-  Scenario: plot two coloured pixels
+  Scenario: Plot two coloured pixels
     When I run `ruby run_editor.rb` interactively
     And I type "I 2 2"
     And I type "L 1 1 F"
@@ -63,4 +63,22 @@ Feature: Edit images
       FO
       OC
       """
+  
+  Scenario: Clear the image after drawing a few pixels
+    When I run `ruby run_editor.rb` interactively
+    And I type "I 3 3"
+    And I type "L 1 1 D"
+    And I type "L 2 2 D"
+    And I type "L 3 3 D"
+    And I type "C"
+    And I type "S"
+    And I type "X"
+    Then the output should contain:
+      """
+      OOO
+      OOO
+      OOO
+      """
+
+
 
