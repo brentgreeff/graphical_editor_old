@@ -130,5 +130,25 @@ Feature: Edit images
       JJJJJ
       JJJJJ
       """
-
+  
+  Scenario: Create 2 triangles
+    When I run `ruby run_editor.rb` interactively
+    And I type "I 5 6"
+    And I type "F 2 2 A"
+    And I type "H 1 5 1 B"
+    And I type "H 2 5 2 B"
+    And I type "H 3 5 3 B"
+    And I type "H 4 5 4 B"
+    And I type "L 5 5 B"
+    And I type "S"
+    And I type "X"
+    Then the output should contain:
+      """
+      BBBBB
+      ABBBB
+      AABBB
+      AAABB
+      AAAAB
+      AAAAA
+      """
 
