@@ -10,9 +10,9 @@ Feature: Edit images
     And I type "X"
     Then the output should contain:
       """
-      00
-      00
-      00
+      OO
+      OO
+      OO
       """
   
   Scenario: Draw a 4 X 2 image
@@ -22,8 +22,8 @@ Feature: Edit images
     And I type "X"
     Then the output should contain:
       """
-      0000
-      0000
+      OOOO
+      OOOO
       """
   
   Scenario: Dont draw image if S command is not entered
@@ -32,7 +32,7 @@ Feature: Edit images
     And I type "X"
     Then the output should not contain:
       """
-      0
+      O
       """
   
   Scenario: plot a coloured pixel as detailed in the test
@@ -60,7 +60,7 @@ Feature: Edit images
     And I type "X"
     Then the output should contain:
       """
-      F0
-      0C
+      FO
+      OC
       """
 

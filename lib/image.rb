@@ -7,11 +7,11 @@ class Image
     clear
   end
   
-  def row(row_num)
+  def row(y)
     line = ''
     
-    1.upto(@width) do |column_num|
-      line << get_colour(row_num, column_num)
+    1.upto(@width) do |x|
+      line << get_colour(x, y)
     end
     line
   end
@@ -55,7 +55,7 @@ class Image
     if existing
       existing.colour
     else
-      "0"
+      "O"
     end
   end
 end
