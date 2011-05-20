@@ -6,4 +6,14 @@
 
 == Specs
 
-bundle exec rspec --colour spec/
+      bundle exec rspec --colour spec/
+
+== Features
+
+      bundle exec cucumber features/edit_images.feature
+
+
+== Execute interactive app
+
+      cd lib
+      ruby run_editor.rb
