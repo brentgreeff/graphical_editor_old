@@ -1,5 +1,3 @@
-require 'point'
-
 class Image
   
   attr_writer :width
@@ -26,6 +24,16 @@ class Image
     else
       @points << Point.new(x, y, colour)
     end
+  end
+  
+  def show
+    result = ''
+    
+    1.upto(@height) do |num|
+      result << "#{row(num)}"
+      result << "\n" unless num == @height
+    end
+    result
   end
   
   def clear

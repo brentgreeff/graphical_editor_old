@@ -1,6 +1,6 @@
 require 'aruba/cucumber'
 
 Before do
-  @dirs = ["bin/"]
+  @dirs = ["lib/"]
 end
 

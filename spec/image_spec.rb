@@ -65,6 +65,26 @@ describe Image do
     end
   end
   
+  context "with a width of 2 pixels" do
+    before { image.width = 2 }
+    
+    context "and a height of 2 pixels" do
+      before { image.height = 2 }
+      
+      it "should print as a 4x4 grid" do
+        image.show.should == "00\n00"
+      end
+      
+      context "with an A coloured pixel placed at x-2 y-2" do
+        before { image.plot(2, 2, 'A') }
+        
+        it "should print as a 4x4 grid" do
+          image.show.should == "00\n0A"
+        end
+      end
+    end
+  end
+  
   context "with a width of 3 pixels" do
     before { image.width = 3 }
     
