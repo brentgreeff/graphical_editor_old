@@ -30,6 +30,10 @@ class Image
     (y1..y2).each { |y| plot(x, y, colour) }
   end
   
+  def horizontal(x1, x2, y, colour)
+    (x1..x2).each { |x| plot(x, y, colour) }
+  end
+  
   def show
     result = ''
     

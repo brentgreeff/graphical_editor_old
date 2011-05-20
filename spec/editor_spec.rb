@@ -42,5 +42,11 @@ describe Editor do
       
       editor.v(3, 2, 4, 'E')
     end
+    
+    it "should draw a horizontal line if h is called" do
+      editor.image.should_receive(:horizontal).with(3, 4, 2, 'Z')
+      
+      editor.h(3, 4, 2, 'Z')
+    end
   end
 end

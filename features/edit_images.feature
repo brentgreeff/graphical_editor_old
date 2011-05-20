@@ -102,5 +102,18 @@ Feature: Edit images
       OOEO
       OOEO
       """
-
+  
+  Scenario: Draw a horizontal row of colour
+    When I run `ruby run_editor.rb` interactively
+    And I type "I 5 4"
+    And I type "H 3 4 2 Z"
+    And I type "S"
+    And I type "X"
+    Then the output should contain:
+      """
+      OOOOO
+      OOZZO
+      OOOOO
+      OOOOO
+      """
 

@@ -20,6 +20,11 @@ class Editor
     nil
   end
   
+  def h(x1, x2, y, colour)
+    @image.horizontal(x1.to_i, x2.to_i, y.to_i, colour)
+    nil
+  end
+  
   def c
     @image.clear
     nil
