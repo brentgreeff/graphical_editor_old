@@ -37,16 +37,22 @@ describe Editor do
       editor.s
     end
     
-    it "should draw a vertical line if v is called" do
+    it "should draw a vertical line if 'v' is called" do
       editor.image.should_receive(:vertical).with(3, 2, 4, 'E')
       
       editor.v(3, 2, 4, 'E')
     end
     
-    it "should draw a horizontal line if h is called" do
+    it "should draw a horizontal line if 'h' is called" do
       editor.image.should_receive(:horizontal).with(3, 4, 2, 'Z')
       
       editor.h(3, 4, 2, 'Z')
+    end
+    
+    it "should should fill the region if 'f' is called" do
+      editor.image.should_receive(:fill).with(3, 3, 'J')
+      
+      editor.f(3, 3, 'J')
     end
   end
 end

@@ -25,6 +25,11 @@ class Editor
     nil
   end
   
+  def f(x, y, colour)
+    @image.fill(x.to_i, y.to_i, colour)
+    nil
+  end
+  
   def c
     @image.clear
     nil

@@ -34,6 +34,14 @@ class Image
     (x1..x2).each { |x| plot(x, y, colour) }
   end
   
+  def fill(x, y, colour)
+    1.upto(@width) do |x_i|
+      1.upto(@height) do |y_i|
+        plot(x_i, y_i, colour)
+      end
+    end
+  end
+  
   def show
     result = ''
     

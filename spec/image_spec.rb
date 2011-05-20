@@ -126,4 +126,22 @@ describe Image do
       end
     end
   end
+  
+  # Vertical line
+  
+  context "with a width of 4 pixels" do
+    before { image.width = 4 }
+    
+    context "and a height of 4 pixels" do
+      before { image.height = 4 }
+      
+      context "with 'E' coloured pixels filling the region of a solid colour" do
+        before { image.fill(3, 3, 'J') }
+        
+        it "should print as a 5x6 grid" do
+          image.show.should == "JJJJ\nJJJJ\nJJJJ\nJJJJ"
+        end
+      end
+    end
+  end
 end

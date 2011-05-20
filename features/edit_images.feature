@@ -116,4 +116,19 @@ Feature: Edit images
       OOOOO
       OOOOO
       """
+  
+  Scenario: Fill a solid region with a colour
+    When I run `ruby run_editor.rb` interactively
+    And I type "I 5 4"
+    And I type "F 2 2 J"
+    And I type "S"
+    And I type "X"
+    Then the output should contain:
+      """
+      JJJJJ
+      JJJJJ
+      JJJJJ
+      JJJJJ
+      """
+
 
